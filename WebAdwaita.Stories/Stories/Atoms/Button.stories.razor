@@ -1,0 +1,27 @@
+@using WebAdwaita.Components
+@attribute [Stories(title: "Atoms/Button")]
+
+<Stories TComponent="Button">
+
+    <Story Name="Default">
+        <Template>
+            <Button>Default</Button>
+        </Template>
+    </Story>
+
+    <Story Name="Variants">
+        <Template>
+            <Button Variant="ButtonVariant.Regular">Regular</Button>
+            <Button Variant="ButtonVariant.Pill">Pill</Button>
+        </Template>
+    </Story>
+
+    <Story Name="Colors">
+        <Template>
+            <Button Color="ButtonColor.Primary">Primary</Button>
+            <Button Color="ButtonColor.Secondary">Secondary</Button>
+            <Button Color="ButtonColor.Destructive">Destructive</Button>
+        </Template>
+    </Story>
+
+</Stories>

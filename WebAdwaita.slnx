@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="WebAdwaita.Stories/WebAdwaita.Stories.csproj" />
+  <Project Path="WebAdwaita/WebAdwaita.csproj" />
+</Solution>

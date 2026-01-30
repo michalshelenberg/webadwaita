@@ -1,0 +1,44 @@
+@namespace WebAdwaita.Components
+
+<button type="@TypeString"
+        class="@CssClass"
+        disabled="@Disabled"
+        @onclick="OnClick"
+        @attributes="AdditionalAttributes">
+    @ChildContent
+</button>
+
+@code {
+    [Parameter]
+    public ButtonVariant Variant { get; set; } = ButtonVariant.Regular;
+
+    [Parameter]
+    public ButtonColor Color { get; set; } = ButtonColor.Primary;
+
+    [Parameter]
+    public ButtonType Type { get; set; } = ButtonType.Button;
+
+    [Parameter]
+    public bool Disabled { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? AdditionalAttributes { get; set; }
+
+    private string TypeString => Type.ToString().ToLowerInvariant();
+
+    private string CssClass
+    {
+        get
+        {
+            var variant = Variant.ToString().ToLowerInvariant();
+            var color = Color.ToString().ToLowerInvariant();
+            return $"button button--{variant} button--{color}";
+        }
+    }
+}
